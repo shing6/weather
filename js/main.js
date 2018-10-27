@@ -17,7 +17,7 @@ jQuery(document).ready(function(){
 		$.ajax({
 			type:'get',
 			//url:'http://api.jisuapi.com/weather/query?appkey=eee8cacbc1e612cd&city=上海',
-			url:'https://v.juhe.cn/weather/index',
+			url:'http://v.juhe.cn/weather/index',
 			data:{
                 key:"46380a15835d66ba3aca3b12164e6e05",
                 dtype:"",
