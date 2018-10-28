@@ -29,11 +29,19 @@ jQuery(document).ready(function(){
 			dataType:'jsonp',
 			jsonp:'callback',
 			success:function(json){
-				console.log(json);
-				var html = template('tmplt',json);
-				$('#ulLists').html(html);
-				getIcon(json.result.today.weather);
-			}
+				if(json.length==null){
+				    alert("正在维护中");
+                        }
+                               else{
+                                    var html = template('tmplt',json);
+                                    $('#ulLists').html(html);
+                                    getIcon(json.result.today.weather);
+                        }
+
+			},
+                       error:function(data){
+                               alert("服务器连接失败");
+                        }
 		})
 
 
