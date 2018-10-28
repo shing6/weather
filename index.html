@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>全国天气预报</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <script src="js/jquery.min.js"></script>
@@ -14,60 +13,70 @@
 </head>
 
 <body>
-<div class="container">
-    <!-- 版心 S -->
-    <div class="w">
-        <!-- 版心 E -->
+<div class="container clearfix">
+
         <!-- 头部 S -->
         <div class="header">
-            <p class="headerText cssbe6388d2919ac6">全国城市天气查询</p>
+            <p class="headerText cssbe">全国城市天气查询</p>
         </div>
         <!-- 头部 E -->
         <!-- 文本框 S -->
         <div class="headerInput">
-            <input type="text" placeholder="请输入城市名称" id="headerGet">
+            <input class="intCity"type="text" placeholder="请输入城市名称">
+            <input class="seachBtn" type="button" value="搜索">
         </div>
+
         <!-- 文本框 E -->
         <!-- 内容 S -->
         <div class="lists">
+            <span id="icon">
+                 <script type="text/html" id="tmplt_icon">
+                       <img src="<%=icon_src%>"/>
+                   </script>
+            </span>
+
             <ul id="ulLists">
                 <script type="text/html" id="tmplt">
                     <li>
-                        <h3>城市:{{result.today.city}}</h3>
-                    </li>
-                    <li>
-                        <h3>日期:{{result.today.date}}</h3>
-                    </li>
-                    <li>
-                        <h3>星期:{{result.today.week}}</h3>
-                    </li>
-                    <li>
-                        <h3>温度:{{result.today.temperature}}</h3>
-                    </li>
-                    <li>
-                        <h3>天气:{{result.today.weather}}</h3>
-                    </li>
-                    <li>
-                        <h3>风力:{{result.today.wind}}</h3>
-                    </li>
-                    <li>
-                        <h3>穿衣指数:{{result.today.dressing_index}}</h3>
-                    </li>
-                    <li>
-                        <h3>穿衣建议:{{result.today.dressing_advice}}</h3>
-                    </li>
-                    <li>
-                        <h3>紫外线强度:{{result.today.uv_index}}</h3>
+                        <span class="icon_logo"></span><h3>天气:{{result.today.weather}}</h3>
                     </li>
 
                     <li>
-                        <h3>洗车指数:{{result.today.wash_index}}</h3>
+
+                       <span class="icon_logo"><img src="weather_icon/城市.png"/></span> <h3>城市:{{result.today.city}}</h3>
+
                     </li>
                     <li>
-                        <h3>旅游指数:{{result.today.travel_index}}</h3>
+                        <span class="icon_logo"><img src="weather_icon/日期.png"/></span> <h3>日期:{{result.today.date_y}}</h3>
                     </li>
                     <li>
-                        <h3>晨练指数:{{result.today.exercise_index}}</h3>
+                        <span class="icon_logo"><img src="weather_icon/星期.png"/></span> <h3>星期:{{result.today.week}}</h3>
+                    </li>
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/温度.png"/></span><h3>温度:{{result.today.temperature}}</h3>
+                    </li>
+
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/风向.png"/></span> <h3>风力:{{result.today.wind}}</h3>
+                    </li>
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/穿衣指数.png"/></span> <h3>穿衣指数:{{result.today.dressing_index}}</h3>
+                    </li>
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/建议.png"/></span> <h3>穿衣建议:{{result.today.dressing_advice}}</h3>
+                    </li>
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/紫外线指数.png"/></span> <h3>紫外线强度:{{result.today.uv_index}}</h3>
+                    </li>
+
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/洗车.png"/></span> <h3>洗车指数:{{result.today.wash_index}}</h3>
+                    </li>
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/旅游.png"/></span> <h3>旅游指数:{{result.today.travel_index}}</h3>
+                    </li>
+                    <li>
+                        <span class="icon_logo"><img src="weather_icon/晨练指数.png"/></span> <h3>晨练指数:{{result.today.exercise_index}}</h3>
                     </li>
 
                 </script>
@@ -76,7 +85,7 @@
         <!-- 内容 E -->
     </div>
     <!-- 版心 E -->
-</div>
+
 </body>
 
 </html>
